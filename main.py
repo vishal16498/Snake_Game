@@ -28,13 +28,14 @@ game_over = False
 
 while not game_over:
     screen.update()
-    time.sleep(0.08)
+    time.sleep(score.game_speed)
     snake.move_snake()
     # food refresh and score update
     if snake.snakes[0].distance(food) < 15:
         food.refresh()
         score.score_update()
         snake.extend_snake()
+    
 
 # tail collision
     for piece in snake.snakes[1:]:
